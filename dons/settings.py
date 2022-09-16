@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-3c+u_k%5)37h3#&0!bna-%=%ir1p(fsz!ynz%eng-960_1z+d(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000']
+ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000']
 
 
 # Application definition
@@ -160,17 +160,17 @@ django_heroku.settings(locals())
 
 AUTH_USER_MODEL = 'utilisateur.DonateurUser'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000",
-#     "http://127.0.0.1:8000",
-#     "https://localhost:3000",
-#     "https://127.0.0.1:3000",
-#     "https://127.0.0.1:8000",
-#     "https://lanfiadon.herokuapp.com/",
-#     "https://dashlanfia.herokuapp.com/",
-#     "https://dashblanfia.herokuapp.com/"
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:8000",
+    "https://localhost:3000",
+    "https://127.0.0.1:3000",
+    "https://127.0.0.1:8000",
+    "https://lanfiadon.herokuapp.com/",
+    "https://dashlanfia.herokuapp.com/",
+    "https://dashblanfia.herokuapp.com/"
+]
 
 CORS_ALLOW_METHODS = [
     "DELETE",
