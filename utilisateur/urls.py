@@ -13,14 +13,15 @@ urlpatterns=format_suffix_patterns([
     path('donateurorg/',CreateDonateurOr.as_view(),name='registers-donateurorg'),
     #Effectuer des dons
     path('detailconnecte/', DetailConecter.as_view(),name='detail-connecte'),
+
     path('efdoargent/',EffectuerDonsArg.as_view(),name='registers-donArg'),
     path('efdoobjet/',EffectuerDonsObj.as_view(),name='registers-donOjets'),
     #Afficher ses dons
     path('argent/', Argen.as_view(),name='detail-donard'),
     path('natures/', Nature.as_view(),name='detail-donnd'),
 
-    path('cibleargent/', CibleArgent.as_view(),name='cible-donard'),
-    path('ciblenatures/', CibleNature.as_view(),name='cible-donnd'),
+    path('cibleargent/<str:slug>/', CibleArgent.as_view(),name='cible-donard'),
+    path('ciblenatures/<str:slug>/', CibleNature.as_view(),name='cible-donnd'),
 
     path('argend/<int:pk>/', Argend.as_view(),name='detail-donard'),
     path('natured/<int:pk>/', Natured.as_view(),name='detail-donnd'),

@@ -208,25 +208,18 @@ class Nature(APIView):
 
 
 class CibleArgent(APIView):
-    def get(self,request):
-        if self.request.user.is_authenticated:
-            print(self.request.user)
-            dons=EffectuerDonArge.objects.filter(cibleV=self.request.user.user_name,affecter=False)
-            serializer=EffectuerArgSerializer(dons, many=True)
-            return Response({'data':serializer.data,'status':status.HTTP_200_OK})
-        else:
-            return Response({'status':status.HTTP_400_BAD_REQUEST})
-
-class CibleNature(APIView):
-    def get(self,request):
-        if self.request.user.is_authenticated:
-            dons=EffectuerDonNature.objects.filter(cibleV=self.request.user.user_name,affecter=False)
-            serializer=EffectuerNatSerializer(dons, many=True)
-            return Response({'data':serializer.data,'status':status.HTTP_200_OK})
-        else:
-            return Response({'status':status.HTTP_400_BAD_REQUEST})
-
+    def get(self,request,slug):
+        dons=EffectuerDonArge.objects.filter(cibleV=slug,affecter=False)
+        serializer=EffectuerArgSerializer(dons, many=True)
+        return Response({'data':serializer.data,'status':status.HTTP_200_OK})
             
+        
+class CibleNature(APIView):
+    def get(self,request,slug):
+        dons=EffectuerDonNature.objects.filter(cibleV=slug,affecter=False)
+        serializer=EffectuerNatSerializer(dons, many=True)
+        return Response({'data':serializer.data,'status':status.HTTP_200_OK})
+                    
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
