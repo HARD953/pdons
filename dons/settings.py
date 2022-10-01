@@ -30,8 +30,8 @@ SECRET_KEY = 'django-insecure-3c+u_k%5)37h3#&0!bna-%=%ir1p(fsz!ynz%eng-960_1z+d(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000',"http://lanfiadon.herokuapp.com/"]
-ALLOWED_HOSTS = ['0.0.0.0','localhost', '127.0.0.1',"https://127.0.0.1:3000",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000']
+ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000',"http://lanfiadon.herokuapp.com/"]
+#ALLOWED_HOSTS = ['0.0.0.0','localhost', '127.0.0.1',"https://127.0.0.1:3000",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000']
 
 
 
@@ -128,12 +128,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
 ],
-#     'DEFAULT_FILTER_BACKENDS':[
-#         'django_filters.rest_framework.DjangoFilterBackend',  
-# ],
-# 'DEFAULT_AUTHENTICATION_CLASSES': [
-#     'rest_framework_simplejwt.authentication.JWTAuthentication'
-#     ],
+    'DEFAULT_FILTER_BACKENDS':[
+        'django_filters.rest_framework.DjangoFilterBackend',  
+],
+'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework_simplejwt.authentication.JWTAuthentication'
+    ],
 }
 
 
@@ -172,10 +172,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://localhost:3000",
     "https://127.0.0.1:3000",
     "https://127.0.0.1:8000",
-    # "https://lanfiadon.herokuapp.com/",
-    # "http://lanfiadon.herokuapp.com/",
-    # "https://dashlanfia.herokuapp.com/",
-    # "https://dashblanfia.herokuapp.com/"
+    "https://lanfiadon.herokuapp.com/",
+    "http://lanfiadon.herokuapp.com/",
+    "https://dashlanfia.herokuapp.com/",
+    "https://dashblanfia.herokuapp.com/"
 ]
 
 CORS_ALLOW_METHODS = [
@@ -208,7 +208,7 @@ CORS_ALLOW_METHODS = [
 
 # refresh="1KQaRGCfQTZDfOXMysJ8ndzramGPvPP-1n4ZoZnu"
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
