@@ -43,7 +43,7 @@ class EffectuerArgSerializer(serializers.ModelSerializer):
 class EffectuerNatSerializer(serializers.ModelSerializer):
     class Meta:
         model = EffectuerDonNature
-        fields = ["id","donateur","typeDons","categorieV","cibleV","categorieObjet","typeObjet","lieu_reception","Etat","photo","affecter","create","typePersonne","provenanced"]
+        fields = ["id","donateur","typeDons","categorieV","cibleV","categorieObjet","typeObjet","lieu_reception","Etat","photo","affecter","create","typePersonne","provenanced","titre","description"]
 
 
 # class ESerializer(serializers.ModelSerializer):

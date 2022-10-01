@@ -93,6 +93,8 @@ class EffectuerDonNature(models.Model):
     Etat=models.CharField(max_length=100,default='null')
     typePersonne=models.CharField(max_length=100,default='null')
     provenanced=models.CharField(max_length=100,default='null')
+    titre=models.CharField(max_length=100,default='null')
+    description=models.TextField(max_length=100,default='null')
     affecter = models.BooleanField (default=False)
     create=models.DateTimeField(auto_now_add=True)
 

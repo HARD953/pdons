@@ -7,6 +7,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+
 urlpatterns=format_suffix_patterns([
     #Crée des donateur
     path('donateurm/', CreateDonateur.as_view(),name='registers-donateurm'),

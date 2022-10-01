@@ -13,11 +13,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
+from wsgiref.handlers import read_environ
 import django_heroku
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+env = environ.Env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -28,7 +30,9 @@ SECRET_KEY = 'django-insecure-3c+u_k%5)37h3#&0!bna-%=%ir1p(fsz!ynz%eng-960_1z+d(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000',"http://lanfiadon.herokuapp.com/"]
+#ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000',"http://lanfiadon.herokuapp.com/"]
+ALLOWED_HOSTS = ['0.0.0.0','localhost', '127.0.0.1',"https://127.0.0.1:3000",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000']
+
 
 
 # Application definition
@@ -124,12 +128,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
 ],
-    'DEFAULT_FILTER_BACKENDS':[
-        'django_filters.rest_framework.DjangoFilterBackend',  
-],
-'DEFAULT_AUTHENTICATION_CLASSES': [
-    'rest_framework_simplejwt.authentication.JWTAuthentication'
-    ],
+#     'DEFAULT_FILTER_BACKENDS':[
+#         'django_filters.rest_framework.DjangoFilterBackend',  
+# ],
+# 'DEFAULT_AUTHENTICATION_CLASSES': [
+#     'rest_framework_simplejwt.authentication.JWTAuthentication'
+#     ],
 }
 
 
@@ -168,10 +172,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://localhost:3000",
     "https://127.0.0.1:3000",
     "https://127.0.0.1:8000",
-    "https://lanfiadon.herokuapp.com/",
-    "http://lanfiadon.herokuapp.com/",
-    "https://dashlanfia.herokuapp.com/",
-    "https://dashblanfia.herokuapp.com/"
+    # "https://lanfiadon.herokuapp.com/",
+    # "http://lanfiadon.herokuapp.com/",
+    # "https://dashlanfia.herokuapp.com/",
+    # "https://dashblanfia.herokuapp.com/"
 ]
 
 CORS_ALLOW_METHODS = [
@@ -183,6 +187,26 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 
+# TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
+# TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+# TWILIO_NUMBER = os.environ.get("TWILIO_NUMBER")
+# SMS_BROADCAST_TO_NUMBERS = [ 
+#     "+2250778882517", # use the format +19735551234
+# ]
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# CONTENT_DIR = os.path.join(BASE_DIR, 'templates')
+# EMAIL_FILE_PATH = os.path.join(CONTENT_DIR,'base/')
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT='587'
+# EMAIL_USE_TLS=True
+# EMAIL_USE_SSL = False
+# EMAIL_HOST_USER ='issa97403@gmail.com'
+# EMAIL_HOST_PASSWORD='08596129'
+
+# refresh="1KQaRGCfQTZDfOXMysJ8ndzramGPvPP-1n4ZoZnu"
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
@@ -214,3 +238,4 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+
