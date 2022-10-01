@@ -12,6 +12,9 @@ urlpatterns=format_suffix_patterns([
     #Crée des donateur
     path('donateurm/', CreateDonateur.as_view(),name='registers-donateurm'),
     path('donateurorg/',CreateDonateurOr.as_view(),name='registers-donateurorg'),
+
+    path('cdonateurm/<int:pk>/', CruddonateurM.as_view()),
+    path('cdonateurorg/<int:pk>/',CruddonateurOr.as_view()),
     #Effectuer des dons
     path('detailconnecte/', DetailConecter.as_view(),name='detail-connecte'),
 

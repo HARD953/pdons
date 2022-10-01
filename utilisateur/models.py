@@ -96,6 +96,7 @@ class EffectuerDonNature(models.Model):
     titre=models.CharField(max_length=100,default='null')
     description=models.TextField(max_length=100,default='null')
     affecter = models.BooleanField (default=False)
+    distribuer = models.BooleanField (default=False)
     create=models.DateTimeField(auto_now_add=True)
 
     # x=["Etat","photo","lieu_reception","donateur","typeD","categorieV","cibleV","montant","provider","categorieObjet","typeObjet"]

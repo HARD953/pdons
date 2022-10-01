@@ -112,6 +112,23 @@ class CreateDonateurOr(APIView):
             error_message="Svp entrer le nom de votre organisations"
         return error_message
 
+class CruddonateurOr(generics.RetrieveUpdateDestroyAPIView):
+    model=DonateurUser
+    permission_classes=[AllowAny]
+    serializer_class=DonateurOrSerializer
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return DonateurUser.objects.filter(user_name=self.request.user.user_name)
+
+class CruddonateurM(generics.RetrieveUpdateDestroyAPIView):
+    model=DonateurUser
+    permission_classes=[AllowAny]
+    serializer_class=DonateurMSerializer
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return DonateurUser.objects.filter(user_name=self.request.user.user_name)
+
+
 class EffectuerDonsArg(APIView):
     def get(self,request):
         if self.request.user.is_authenticated:
