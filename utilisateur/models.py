@@ -81,7 +81,7 @@ class EffectuerDonArge(models.Model):
     
 class EffectuerDonNature(models.Model):
     def nameFile(instance, filename):
-        return '/'.join(['images', str(instance.typeObjet), filename])
+        return '/'.join(['images', str(instance.donateur), filename])
     #Objet
     donateur=models.CharField(max_length=30,default='issa')
     typeDons=models.CharField(max_length=30,default='null')
