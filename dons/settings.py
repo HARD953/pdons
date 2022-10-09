@@ -30,8 +30,8 @@ SECRET_KEY = 'django-insecure-3c+u_k%5)37h3#&0!bna-%=%ir1p(fsz!ynz%eng-960_1z+d(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000',"http://lanfiadon.herokuapp.com/"]
-#ALLOWED_HOSTS = ['0.0.0.0','localhost', '127.0.0.1',"https://127.0.0.1:3000",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000']
+#ALLOWED_HOSTS = ['0.0.0.0','https://dashblanfia.herokuapp.com/','https://dashlanfia.herokuapp.com/','https://lanfiadon.herokuapp.com/','localhost', '127.0.0.1',"https://127.0.0.1:3000","https://apidons.herokuapp.com",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000',"http://lanfiadon.herokuapp.com/"]
+ALLOWED_HOSTS = ['0.0.0.0','localhost', '127.0.0.1',"https://127.0.0.1:3000",'https://localhost:3000',"http://127.0.0.1:3000",'http://localhost:3000']
 
 
 
@@ -97,10 +97,10 @@ WSGI_APPLICATION = 'dons.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd1708fpc0keuvc', 
-        'USER': 'ntufiujaqwjasb', 
-        'PASSWORD': 'e936e562fa064f0364274c8ac8582191dd3e0b18d08c57bc366b9fcad60bfd8c',
-        'HOST': 'ec2-18-208-55-135.compute-1.amazonaws.com', 
+        'NAME': 'da2hb3e8l710fv', 
+        'USER': 'ggwuomyvrrftkg', 
+        'PASSWORD': '0d714e0472ddeae6759b24b4ca7b7db2e1e9ebef593d4a6a449dfa094ed42be3',
+        'HOST': 'ec2-54-91-223-99.compute-1.amazonaws.com', 
         'PORT': '5432',
     }
 }
@@ -172,11 +172,13 @@ CORS_ALLOWED_ORIGINS = [
     "https://localhost:3000",
     "https://127.0.0.1:3000",
     "https://127.0.0.1:8000",
+    "http://127.0.0.1:9000",
     "https://lanfiadon.herokuapp.com/",
     "http://lanfiadon.herokuapp.com/",
     "https://dashlanfia.herokuapp.com/",
     "https://dashblanfia.herokuapp.com/"
-]
+
+ ]
 
 CORS_ALLOW_METHODS = [
     "DELETE",

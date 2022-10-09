@@ -23,8 +23,7 @@ class CustumerAccountManager(BaseUserManager):
         if other_fields.get('is_staff') is not True:
             raise ValueError('superuser must be assigned to is_staff=True.')
         if other_fields.get('is_superuser') is not True:
-            raise ValueError('superuser must be assigned to is_superuser=True.')
-        
+            raise ValueError('superuser must be assigned to is_superuser=True.')     
         return self.create_user(email, user_name,first_name,**other_fields)
 
 class DonateurUser(AbstractBaseUser,PermissionsMixin):
@@ -48,6 +47,7 @@ class DonateurUser(AbstractBaseUser,PermissionsMixin):
     is_superuser=models.BooleanField(default=True)
     # is_user=models.BooleanField(default=False)
     # is_agent=models.BooleanField(default=False)
+
     x={
     "first_name":"kouassi",
     "last_name":"herver",
@@ -75,6 +75,14 @@ class EffectuerDonArge(models.Model):
     provenanced=models.CharField(max_length=100,default='null')
     affecter = models.BooleanField (default=False)
     distribuer = models.BooleanField (default=False)
+    code=models.CharField(max_length=30)
+    message=models.CharField(max_length=30)
+    description=models.CharField(max_length=30)
+    data=models.JSONField()
+    payment_url=models.CharField(max_length=30)
+    api_response_id=models.CharField(max_length=30)
+
+
     # x=["Etat","photo","lieu_reception","donateur","typeD","categorieV","cibleV","montant","provider","categorieObjet","typeObjet"]
     def __str__(self):
         return "{}".format(self.donateur)
@@ -103,4 +111,9 @@ class EffectuerDonNature(models.Model):
     # x=["Etat","photo","lieu_reception","donateur","typeD","categorieV","cibleV","montant","provider","categorieObjet","typeObjet"]
     def __str__(self):
         return "{}".format(self.donateur)
+
+
+   
+
+
 

@@ -266,7 +266,6 @@ class CibleArgent(APIView):
         serializer=EffectuerArgSerializer(dons, many=True)
         return Response({'data':serializer.data,'status':status.HTTP_200_OK})
             
-        
 class CibleNature(APIView):
     def get(self,request,slug):
         dons=EffectuerDonNature.objects.filter(cibleV=slug,affecter=False)
@@ -308,5 +307,7 @@ class DetailConecter(APIView):
             return Response({'data':serializer.data,'status':status.HTTP_200_OK})
         else:
             return Response({'status':status.HTTP_400_BAD_REQUEST})
+
+        
 
 
