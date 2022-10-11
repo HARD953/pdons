@@ -77,14 +77,14 @@ class EffectuerDonArge(models.Model):
     provenanced=models.CharField(max_length=100,default='null')
     affecter = models.BooleanField (default=False)
     distribuer = models.BooleanField (default=False)
-    description=models.CharField(max_length=30)
-    amount=models.CharField(max_length=30)
-    currency=models.CharField(max_length=30)
-    matadata=models.CharField(max_length=30)
-    operator_id=models.CharField(max_length=30)
-    payement_date=models.CharField(max_length=30)
-    payement_method=models.CharField(max_length=30)
-    status=models.CharField(max_length=30)
+    description=models.CharField(max_length=100,default='null')
+    amount=models.CharField(max_length=100,default='null')
+    currency=models.CharField(max_length=100,default='null')
+    matadata=models.CharField(max_length=100,default='null')
+    operator_id=models.CharField(max_length=100,default='null')
+    payement_date=models.CharField(max_length=100,default='null')
+    payement_method=models.CharField(max_length=100,default='null')
+    status=models.CharField(max_length=100,default='null')
 
 
     # x=["Etat","photo","lieu_reception","donateur","typeD","categorieV","cibleV","montant","provider","categorieObjet","typeObjet"]
