@@ -38,7 +38,7 @@ class DonateurOrSerializer(serializers.HyperlinkedModelSerializer):
 class EffectuerArgSerializer(serializers.ModelSerializer):
     class Meta:
         model = EffectuerDonArge
-        fields = ["id","api_response_id","payment_url","data","description","message","code","donateur","typeDons","categorieV","cibleV","montant","provider","affecter","distribuer","create","typePersonne","provenanced"]
+        fields = ["id","status","amount","currency","matadata","operator_id","payement_date","payement_method","donateur","typeDons","categorieV","cibleV","montant","provider","affecter","distribuer","create","typePersonne","provenanced"]
 class EffectuerNatSerializer(serializers.ModelSerializer):
     class Meta:
         model = EffectuerDonNature

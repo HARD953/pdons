@@ -1,4 +1,6 @@
+from ast import operator
 from distutils.command.upload import upload
+from locale import currency
 from django.db import models
 from django.contrib.auth.models import AbstractUser,PermissionsMixin, AbstractBaseUser,BaseUserManager
 from affecte.models import*
@@ -75,18 +77,18 @@ class EffectuerDonArge(models.Model):
     provenanced=models.CharField(max_length=100,default='null')
     affecter = models.BooleanField (default=False)
     distribuer = models.BooleanField (default=False)
-    code=models.CharField(max_length=30)
-    message=models.CharField(max_length=30)
-    description=models.CharField(max_length=30)
-    data=models.JSONField()
-    payment_url=models.CharField(max_length=30)
-    api_response_id=models.CharField(max_length=30)
+    amount=models.CharField(max_length=30)
+    currency=models.CharField(max_length=30)
+    matadata=models.CharField(max_length=30)
+    operator_id=models.CharField(max_length=30)
+    payement_date=models.CharField(max_length=30)
+    payement_method=models.CharField(max_length=30)
+    status=models.CharField(max_length=30)
 
 
     # x=["Etat","photo","lieu_reception","donateur","typeD","categorieV","cibleV","montant","provider","categorieObjet","typeObjet"]
     def __str__(self):
         return "{}".format(self.donateur)
-    
 class EffectuerDonNature(models.Model):
     def nameFile(instance, filename):
         return '/'.join(['images', str(instance.donateur), filename])
