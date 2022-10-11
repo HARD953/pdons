@@ -77,6 +77,7 @@ class EffectuerDonArge(models.Model):
     provenanced=models.CharField(max_length=100,default='null')
     affecter = models.BooleanField (default=False)
     distribuer = models.BooleanField (default=False)
+    description=models.CharField(max_length=30)
     amount=models.CharField(max_length=30)
     currency=models.CharField(max_length=30)
     matadata=models.CharField(max_length=30)
